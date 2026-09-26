@@ -1,0 +1,1401 @@
+/* =========================================
+   ROOT
+========================================= */
+
+:root {
+    --yellow: #f6c84c;
+    --yellow-soft: #ffe9a8;
+    --yellow-light: #fff8df;
+
+    --cream: #fffaf0;
+
+    --brown: #6f4b2a;
+    --brown-dark: #51351d;
+
+    --shadow:
+        10px 10px 22px rgba(180, 139, 48, 0.18),
+        -8px -8px 20px rgba(255, 255, 255, 0.95);
+
+    --shadow-small:
+        6px 6px 15px rgba(180, 139, 48, 0.15),
+        -5px -5px 12px rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--brown);
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    background: rgba(255, 250, 240, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 14px 0;
+
+    box-shadow:
+        0 5px 18px rgba(180, 139, 48, 0.08);
+
+    z-index: 1000;
+}
+
+.navbar-brand {
+    color: var(--brown-dark) !important;
+
+    font-family: "Baloo 2", cursive;
+
+    font-size: 1.45rem;
+    font-weight: 800;
+}
+
+.nav-link {
+    color: var(--brown) !important;
+
+    font-weight: 600;
+
+    margin-left: 12px;
+
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #d59d20 !important;
+    transform: translateY(-2px);
+}
+
+.navbar-toggler {
+    border: none;
+    box-shadow: none !important;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 150px 0 100px;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            #fff2bb 0,
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            #ffe8a2 0,
+            transparent 25%
+        ),
+        var(--cream);
+
+    display: flex;
+    align-items: center;
+}
+
+.small-badge {
+    display: inline-block;
+
+    background: var(--yellow-soft);
+
+    padding: 9px 18px;
+
+    border-radius: 50px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    color: var(--brown);
+
+    box-shadow: var(--shadow-small);
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Baloo 2", cursive;
+
+    font-size: clamp(3rem, 7vw, 5.4rem);
+
+    line-height: 0.95;
+
+    font-weight: 800;
+
+    color: var(--brown-dark);
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--yellow);
+
+    text-shadow:
+        2px 3px 0 #e5ad2f;
+}
+
+.hero-text {
+    max-width: 600px;
+
+    line-height: 1.9;
+
+    color: #795b3a;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.btn-main,
+.btn-secondary {
+    display: inline-block;
+
+    padding: 13px 23px;
+
+    border-radius: 50px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.btn-main {
+    background: var(--yellow);
+
+    color: var(--brown-dark);
+
+    box-shadow: var(--shadow-small);
+}
+
+.btn-main:hover {
+    color: var(--brown-dark);
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+    background: var(--yellow-light);
+
+    color: var(--brown);
+
+    box-shadow: var(--shadow-small);
+}
+
+.btn-secondary:hover {
+    color: var(--brown-dark);
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
+   INFO MINI
+========================================= */
+
+.info-mini {
+    display: flex;
+
+    gap: 35px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+}
+
+.info-mini > div {
+    display: flex;
+
+    gap: 10px;
+
+    align-items: flex-start;
+}
+
+.info-mini span {
+    font-size: 1.4rem;
+}
+
+.info-mini p {
+    margin: 0;
+
+    font-size: 0.8rem;
+
+    line-height: 1.6;
+}
+
+.info-mini strong {
+    color: var(--brown-dark);
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-area {
+    position: relative;
+
+    width: 380px;
+
+    max-width: 90%;
+
+    margin: auto;
+
+    padding: 30px;
+}
+
+.profile-circle {
+    width: 330px;
+    height: 330px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    padding: 12px;
+
+    background: var(--yellow-soft);
+
+    box-shadow: var(--shadow);
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 7px solid var(--cream);
+}
+
+.profile-label {
+    position: absolute;
+
+    right: 0;
+    bottom: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 18px;
+
+    border-radius: 20px;
+
+    background: var(--cream);
+
+    box-shadow: var(--shadow);
+
+    animation: floatingSmall 4s ease-in-out infinite;
+}
+
+.profile-label > span {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: var(--yellow-soft);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.2rem;
+}
+
+.profile-label small,
+.profile-label strong {
+    display: block;
+}
+
+.profile-label small {
+    font-size: 0.65rem;
+}
+
+.profile-label strong {
+    color: var(--brown-dark);
+}
+
+.decor {
+    position: absolute;
+
+    color: var(--yellow);
+
+    font-size: 2rem;
+}
+
+.decor-one {
+    top: 10px;
+    left: 20px;
+
+    animation: rotate 4s linear infinite;
+}
+
+.decor-two {
+    top: 60px;
+    right: 10px;
+
+    animation: floatingSmall 3s ease-in-out infinite;
+}
+
+.decor-three {
+    bottom: 40px;
+    left: 0;
+
+    animation: rotate 5s linear infinite;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes floating {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes floatingSmall {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+
+    max-width: 750px;
+
+    margin: 0 auto 55px;
+}
+
+.section-title span {
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    color: #d59d20;
+
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-family: "Baloo 2", cursive;
+
+    font-size: clamp(2rem, 5vw, 3.3rem);
+
+    color: var(--brown-dark);
+
+    margin: 10px 0;
+
+    font-weight: 800;
+}
+
+.section-title h2 b {
+    color: var(--yellow);
+}
+
+.section-title p {
+    color: #876b4c;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-card {
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 30px;
+
+    background: var(--yellow-light);
+
+    border-radius: 35px;
+
+    box-shadow: var(--shadow);
+}
+
+.about-icon {
+    min-width: 90px;
+
+    height: 90px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--yellow-soft);
+
+    border-radius: 30px;
+
+    font-size: 3rem;
+
+    box-shadow: var(--shadow-small);
+}
+
+.about-card h3 {
+    font-family: "Baloo 2", cursive;
+
+    font-size: 2rem;
+
+    color: var(--brown-dark);
+}
+
+.about-card p {
+    line-height: 1.8;
+
+    color: #795b3a;
+}
+
+.owner-box {
+    width: fit-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px 18px;
+
+    margin-top: 20px;
+
+    border-radius: 20px;
+
+    background: var(--cream);
+
+    box-shadow: var(--shadow-small);
+}
+
+.owner-box > span {
+    font-size: 1.6rem;
+}
+
+.owner-box small,
+.owner-box strong {
+    display: block;
+}
+
+.owner-box small {
+    font-size: 0.7rem;
+}
+
+.owner-box strong {
+    color: var(--brown-dark);
+}
+
+
+/* =========================================
+   MENU KAMI
+========================================= */
+
+.menu-section {
+    background: var(--cream);
+
+    padding-top: 110px;
+    padding-bottom: 125px;
+
+    position: relative;
+}
+
+
+/* PAPAN MENU — DIPERKECIL */
+
+.menu-board {
+    max-width: 650px;
+
+    margin: 0 auto 70px;
+
+    padding: 10px;
+
+    background: var(--yellow-light);
+
+    border-radius: 30px;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+.menu-board img {
+    width: 100%;
+
+    border-radius: 22px;
+
+    display: block;
+}
+
+
+/* =========================================
+   PILIHAN ROTI
+========================================= */
+
+.menu-section .row {
+    row-gap: 35px;
+}
+
+.menu-card {
+    height: 100%;
+
+    background: var(--cream);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-small);
+
+    transition: 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow);
+}
+
+.menu-photo {
+    height: 260px;
+
+    overflow: hidden;
+
+    background: var(--yellow-soft);
+}
+
+.menu-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.4s ease;
+}
+
+.menu-card:hover .menu-photo img {
+    transform: scale(1.05);
+}
+
+.menu-content {
+    padding: 22px 25px 27px;
+
+    position: relative;
+}
+
+.menu-number {
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    color: #d59d20;
+
+    letter-spacing: 1px;
+}
+
+.menu-content h3 {
+    font-family: "Baloo 2", cursive;
+
+    font-size: 1.6rem;
+
+    color: var(--brown-dark);
+
+    margin: 3px 0 8px;
+}
+
+.menu-content p {
+    color: #806445;
+
+    font-size: 0.88rem;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   PEMISAH MENU & FOTO PRODUK
+========================================= */
+
+#roti {
+    padding-top: 120px;
+    padding-bottom: 110px;
+
+    background: #fffdf4;
+
+    position: relative;
+
+    border-top: 1px solid rgba(213, 157, 32, 0.08);
+}
+
+#roti::before {
+    content: "";
+
+    display: block;
+
+    width: 75px;
+    height: 5px;
+
+    margin: -35px auto 65px;
+
+    border-radius: 50px;
+
+    background: var(--yellow);
+
+    box-shadow:
+        0 4px 10px rgba(180, 139, 48, 0.15);
+}
+
+
+/* =========================================
+   FOTO PRODUK
+========================================= */
+
+.photo-card {
+    height: 300px;
+
+    padding: 10px;
+
+    background: var(--cream);
+
+    border-radius: 28px;
+
+    box-shadow: var(--shadow-small);
+
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.photo-card:hover {
+    transform:
+        translateY(-7px)
+        rotate(1deg);
+
+    box-shadow: var(--shadow);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+}
+
+
+/* =========================================
+   STAND & TEMPAT
+========================================= */
+
+.stand-section {
+    background: #fff7d9;
+
+    padding-top: 105px;
+}
+
+.stand-gallery {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1.35fr 0.65fr;
+
+    gap: 25px;
+}
+
+.stand-main {
+    position: relative;
+
+    height: 560px;
+
+    padding: 10px;
+
+    background: var(--cream);
+
+    border-radius: 35px;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+.stand-main img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 27px;
+
+    transition: 0.5s;
+}
+
+.stand-main:hover img {
+    transform: scale(1.03);
+}
+
+.photo-label {
+    position: absolute;
+
+    left: 30px;
+    bottom: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 20px;
+
+    background: rgba(255, 250, 240, 0.94);
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow-small);
+}
+
+.photo-label > span {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--yellow-soft);
+
+    border-radius: 15px;
+
+    font-size: 1.3rem;
+}
+
+.photo-label small,
+.photo-label strong {
+    display: block;
+}
+
+.photo-label small {
+    font-size: 0.65rem;
+
+    color: #967856;
+}
+
+.photo-label strong {
+    color: var(--brown-dark);
+}
+
+.stand-side {
+    position: relative;
+
+    height: 560px;
+
+    padding: 10px;
+
+    background: var(--cream);
+
+    border-radius: 35px;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+.stand-side img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 27px;
+
+    transition: 0.5s;
+}
+
+.stand-side:hover img {
+    transform: scale(1.03);
+}
+
+.side-label {
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+
+    padding: 13px 16px;
+
+    background: rgba(255, 250, 240, 0.94);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow-small);
+
+    text-align: center;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    color: var(--brown-dark);
+}
+
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.location-box {
+    max-width: 1100px;
+
+    margin: 35px auto 0;
+
+    padding: 25px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: var(--cream);
+
+    border-radius: 28px;
+
+    box-shadow: var(--shadow-small);
+}
+
+.location-icon {
+    min-width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--yellow-soft);
+
+    border-radius: 20px;
+
+    font-size: 1.7rem;
+}
+
+.location-content {
+    flex: 1;
+}
+
+.location-content h3 {
+    margin: 0 0 5px;
+
+    font-family: "Baloo 2", cursive;
+
+    font-size: 1.5rem;
+
+    color: var(--brown-dark);
+}
+
+.location-content a {
+    color: #765633;
+
+    line-height: 1.6;
+
+    font-size: 0.85rem;
+}
+
+.location-content a:hover {
+    color: #d59d20;
+
+    text-decoration: underline;
+}
+
+.location-content p {
+    margin: 8px 0 0;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    color: var(--brown);
+}
+
+.map-button {
+    display: inline-block;
+
+    white-space: nowrap;
+
+    padding: 12px 18px;
+
+    background: var(--yellow);
+
+    color: var(--brown-dark);
+
+    border-radius: 50px;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    box-shadow: var(--shadow-small);
+
+    transition: 0.3s;
+}
+
+.map-button:hover {
+    color: var(--brown-dark);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   FEATURE
+========================================= */
+
+.feature-card {
+    height: 100%;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: var(--yellow-light);
+
+    border-radius: 30px;
+
+    box-shadow: var(--shadow-small);
+
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+}
+
+.feature-card > div {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--yellow-soft);
+
+    border-radius: 23px;
+
+    font-size: 2rem;
+
+    box-shadow: var(--shadow-small);
+}
+
+.feature-card h3 {
+    font-family: "Baloo 2", cursive;
+
+    font-size: 1.6rem;
+
+    color: var(--brown-dark);
+}
+
+.feature-card p {
+    color: #806445;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-section {
+    padding: 100px 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #ffe9a8,
+            transparent 30%
+        ),
+        #fff4cc;
+}
+
+.contact-card {
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 50px;
+
+    background: var(--cream);
+
+    border-radius: 35px;
+
+    box-shadow: var(--shadow);
+}
+
+.contact-list {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    background: var(--yellow-light);
+
+    border-radius: 22px;
+
+    box-shadow: var(--shadow-small);
+
+    color: var(--brown);
+
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    transform: translateY(-4px);
+
+    color: var(--brown-dark);
+}
+
+.contact-item > span {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--yellow-soft);
+
+    border-radius: 17px;
+
+    font-size: 1.5rem;
+}
+
+.contact-item small,
+.contact-item strong {
+    display: block;
+}
+
+.contact-item small {
+    font-size: 0.7rem;
+
+    color: #967856;
+}
+
+.contact-item strong {
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 50px 0;
+
+    background: #f7d56a;
+
+    text-align: center;
+
+    color: var(--brown-dark);
+}
+
+footer h3 {
+    font-family: "Baloo 2", cursive;
+
+    font-size: 1.8rem;
+
+    font-weight: 800;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+.footer-line {
+    width: 80px;
+    height: 3px;
+
+    margin: 20px auto;
+
+    background: var(--brown-dark);
+
+    border-radius: 10px;
+}
+
+footer small {
+    font-size: 0.75rem;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .nav-link {
+        margin-left: 0;
+
+        padding: 10px 0 !important;
+    }
+
+    .hero {
+        padding-top: 130px;
+    }
+
+    .profile-area {
+        margin-top: 30px;
+    }
+
+    .stand-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .stand-main,
+    .stand-side {
+        height: 450px;
+    }
+
+    .location-box {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .hero {
+        padding: 120px 0 70px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .profile-circle {
+        width: 280px;
+        height: 280px;
+    }
+
+    .profile-area {
+        width: 330px;
+    }
+
+    .about-card {
+        flex-direction: column;
+
+        padding: 28px;
+    }
+
+    .contact-list {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        padding: 30px 20px;
+    }
+
+    .stand-main,
+    .stand-side {
+        height: 400px;
+    }
+
+    .menu-photo {
+        height: 240px;
+    }
+
+    .menu-board {
+        margin-bottom: 50px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-main,
+    .btn-secondary {
+        text-align: center;
+
+        width: 100%;
+    }
+
+    .profile-circle {
+        width: 240px;
+        height: 240px;
+    }
+
+    .profile-area {
+        width: 290px;
+    }
+
+    .profile-label {
+        right: -5px;
+    }
+
+    .photo-card {
+        height: 220px;
+    }
+
+    .stand-main,
+    .stand-side {
+        height: 350px;
+    }
+
+    .photo-label {
+        left: 20px;
+        bottom: 20px;
+    }
+
+    .location-box {
+        padding: 22px;
+
+        flex-direction: column;
+    }
+
+    .map-button {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .menu-photo {
+        height: 220px;
+    }
+
+    .menu-content {
+        padding: 20px;
+    }
+}
